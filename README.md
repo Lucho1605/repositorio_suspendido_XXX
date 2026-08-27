@@ -86,7 +86,7 @@ el codigo:
 
 A continuación se presenta el desglose y análisis del comportamiento de la ejecución del código:
 
-## 📊 Cuadro Comparativo de Variables
+##  Cuadro Comparativo de Variables
 
 | Variable | Valor Final | Operación Evaluada | Explicación del Comportamiento |
 | :--- | :--- | :--- | :--- |
@@ -104,7 +104,7 @@ A continuación se presenta el desglose y análisis del comportamiento de la eje
 | **3. En Operaciones Matemáticas** | `int res = 10 + ++x;` *(si `x=2`)*<br> `x` pasa a 3 primero. `10 + 3 = 13`. | `int res = 10 + x++;` *(si `x=2`)*<br> Usa `x=2`. `10 + 2 = 12`. Luego `x` pasa a 3. | Sí |
 ---
 
-## 🖥️ Salida en Consola
+##  Salida en Consola
 ### Estructuras condicionales
 
 Las estructuras condicionales permiten que un programa tome diferentes decisiones dependiendo de si una condición se cumple o no.
