@@ -99,9 +99,9 @@ A continuación se presenta el desglose y análisis del comportamiento de la eje
 
 | Contexto / Operación | Preincremento (`++i`) | Postincremento (`i++`) | ¿Producen resultado distinto? |
 | :--- | :--- | :--- | :---: |
-| **1. En un ciclo `for`** | `for (int i = 0; i < 5; ++i)`<br>🔹 Se incrementa en cada paso. | `for (int i = 0; i < 5; i++)`<br>🔹 Se incrementa en cada paso. | ❌ **No** *(Comportamiento idéntico)* |
-| **2. En una Asignación** | `int b = ++a;` *(si `a=5`)*<br>🔹 `a` pasa a 6 y **`b` recibe 6**. | `int b = a++;` *(si `a=5`)*<br>🔹 **`b` recibe 5** y luego `a` pasa a 6. | Sí |
-| **3. En Operaciones Matemáticas** | `int res = 10 + ++x;` *(si `x=2`)*<br>🔹 `x` pasa a 3 primero. `10 + 3 = 13`. | `int res = 10 + x++;` *(si `x=2`)*<br>🔹 Usa `x=2`. `10 + 2 = 12`. Luego `x` pasa a 3. | Sí |
+| **1. En un ciclo `for`** | `for (int i = 0; i < 5; ++i)`<br> Se incrementa en cada paso. | `for (int i = 0; i < 5; i++)`<br> Se incrementa en cada paso. |  **No** *(Comportamiento idéntico)* |
+| **2. En una Asignación** | `int b = ++a;` *(si `a=5`)*<br> `a` pasa a 6 y **`b` recibe 6**. | `int b = a++;` *(si `a=5`)*<br> **`b` recibe 5** y luego `a` pasa a 6. | Sí |
+| **3. En Operaciones Matemáticas** | `int res = 10 + ++x;` *(si `x=2`)*<br> `x` pasa a 3 primero. `10 + 3 = 13`. | `int res = 10 + x++;` *(si `x=2`)*<br> Usa `x=2`. `10 + 2 = 12`. Luego `x` pasa a 3. | Sí |
 ---
 
 ## 🖥️ Salida en Consola
