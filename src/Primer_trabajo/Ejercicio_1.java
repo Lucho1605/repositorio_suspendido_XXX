@@ -29,12 +29,12 @@ public class Ejercicio_1 {
         subt= (int) (cant*prec); 
         System.out.println("el valor a pagar sin descuento: "+subt);
         
-        if (subt<15000){
-            des= subt ;
+        if (subt<20000){
+            des= subt*0 ;
            
         }
-        else if (subt>20000){
-            des= subt*0.1;
+        else if (subt>20000 && subt<70000){
+            des= subt*0.05;
        
     }
         else if (subt>70000){
