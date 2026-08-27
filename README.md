@@ -54,6 +54,29 @@ En este caso, primero se utiliza el valor actual de la variable y después se re
     x = 6
     y = 5
 
+
+| Característica | Preincremento | Postincremento |
+|---|---|---|
+| **Operador** | `++variable` | `variable++` |
+| **Funcionamiento** | Incrementa la variable antes de utilizar su valor | Utiliza el valor actal y después incrementa la variable |
+| **Momento del incremento** | Primero incrementa | Primero utiliza el valor |
+| **Ejemplo** | `int y = ++x;` | `int y = x++;` |
+| **Valor inicial de `x`** | `5` | `5` |
+| **Valor de `x` después** | `6` | `6` |
+| **Valor de `y`** | `6` | `5` |
+
+# En que situación se producen resultados distintos? 
+
+| Concepto / Escenario | Preincremento (`++i`) | Postincremento (`i++`) |
+| :--- | :--- | :--- |
+| **Definición general** | Incrementa el valor **antes** de evaluarlo/usarlo. Devuelve el **nuevo** valor. | Evalúa/usa el valor **antes** de incrementarlo. Devuelve el **valor original**. |
+| **1. Asignaciones directas** | `int b = ++a;`<br> `a` pasa a 6 y a `b` se le asigna 6. | `int b = a++;`<br> A `b` se le asigna 5 y luego `a` pasa a 6. |
+| **2. Evaluaciones (`if` / `while`)** | `if (++i == 1)`<br> **Verdadero:** Incrementa `i` a 1 y luego compara `1 == 1`. | `if (i++ == 1)`<br> **Falso:** Compara `0 == 1` y luego incrementa `i` a 1. |
+| **3. Argumentos en funciones** | `imprimir(++x);`<br> Incrementa `x` a 11 y pasa 11 a la función. | `imprimir(x++);`<br> Pasa 10 a la función y luego incrementa `x` a 11. |
+| **4. Acceso a Arreglos** | `val = arr[++i];`<br> Incrementa `i` a 1 y lee `arr[1]`. | `val = arr[i++];`<br> Lee `arr[0]` y luego i<ncrementa `i` a 1. |
+| **Sentencias aisladas** | `++i;`<br> Resultado final idéntico en la variable. | `i++;`<br> Resultado final idéntico en la variable. |
+| **Bucles `for` simples** | `for (int i = 0; i < 5; ++i)`<br> Mismo número de iteraciones y comportamiento. | `for (int i = 0; i < 5; i++)`<br> Mismo número de iteraciones y comportamiento. |
+| **Rendimiento (C++)** |  **Más eficiente** en iteradores de objetos (evita guardar copias). |  Puede generar una copia temporal del objeto en iteradores. |
 ### Estructuras condicionales
 
 Las estructuras condicionales permiten que un programa tome diferentes decisiones dependiendo de si una condición se cumple o no.
