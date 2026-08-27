@@ -77,6 +77,7 @@ También se pueden utilizar `else if` y `else`:
     }
 
 ---
+#III. Solución ejercicios 
 # Ejercicio 1 _ Sistema de ventas al por mayor en Java
 
 ## Introducción
@@ -1199,3 +1200,62 @@ Con el desarrollo de este ejercicio se reforzaron los siguientes conceptos:
 
 ## 21. Evidencia de la ejecución del programa 
 <img width="1365" height="718" alt="image" src="https://github.com/user-attachments/assets/2e585331-7d6c-4178-9e0a-cda0db58c732" />
+
+---
+
+## IV. Preguntas
+
+### ¿Cuál es la principal diferencia entre `++variable` y `variable++`?
+
+La principal diferencia es el momento en que se realiza el incremento.
+
+- `++variable` es **preincremento**: primero aumenta el valor de la variable y después utiliza ese nuevo valor.
+- `variable++` es **posincremento**: primero utiliza el valor actual y después aumenta la variable.
+
+---
+
+### ¿Qué estructura `if` considera más adecuada para situaciones complejas y por qué?
+
+Para situaciones complejas considero que la estructura **`if - else if - else`** es una de las más adecuadas, porque permite evaluar diferentes condiciones de manera ordenada y ejecutar una acción dependiendo de cuál condición se cumpla.
+
+Por ejemplo:
+
+    if (nota >= 90) {
+        System.out.println("Excelente");
+    }
+    else if (nota >= 70) {
+        System.out.println("Aprobado");
+    }
+    else {
+        System.out.println("No aprobado");
+    }
+
+Esta estructura permite organizar diferentes posibilidades sin tener que utilizar varios `if` independientes.
+
+---
+
+### ¿Qué dificultades encontró durante el desarrollo?
+
+verdaderamente, durante el desarrollo de la actividad habian terminos y identificadores que no tenia muy claros. por lo que hizo que en la creación del codigo me hizo gastar mas tiempo del que pensé que usaria para la finalización del taller.
+
+También fue necesario prestar atención al orden de las condiciones en las estructuras `if` y `else if`, ya que una condición colocada incorrectamente puede hacer que otra condición nunca llegue a ejecutarse.
+
+Otra dificultad fue comprender el y saber organizar las terminaciones de las llaves, momentos que me votaba error constantemente hizo que se hiciera estresante la creación; para resultar siendo solo la falta de una llave de cierre.
+
+---
+
+### ¿Qué aprendizajes obtuvo durante la actividad?
+
+Durante esta actividad aprendí a diferenciar correctamente el **preincremento (`++variable`)** del **posincremento (`variable++`)** y a comprender cómo cambia el resultado dependiendo del momento en que se realiza el incremento.
+
+También aprendí y mejoré las formas de utilizar las estructuras **`if`, `else if` y `else`** para tomar decisiones dentro de un programa y a combinar condiciones utilizando operadores de comparación y operadores lógicos.
+
+Además, comprendí la importancia de organizar correctamente las condiciones para que el programa funcione de acuerdo con lo esperado.
+
+---
+
+## V. Conclusión
+
+La actividad permitió reforzar conocimientos fundamentales de programación en Java. El uso de operadores de incremento y estructuras condicionales es importante para desarrollar programas capaces de realizar operaciones y tomar decisiones de acuerdo con diferentes situaciones.
+
+Comprender estos conceptos facilita el desarrollo de programas más organizados y permite avanzar hacia estructuras de programación más complejas.
