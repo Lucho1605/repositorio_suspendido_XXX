@@ -77,7 +77,7 @@ También se pueden utilizar `else if` y `else`:
     }
 
 ---
-#III. Solución ejercicios 
+## III. Solución ejercicios
 # Ejercicio 1 _ Sistema de ventas al por mayor en Java
 
 ## Introducción
