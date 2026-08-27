@@ -77,6 +77,34 @@ En este caso, primero se utiliza el valor actual de la variable y después se re
 | **Sentencias aisladas** | `++i;`<br> Resultado final idéntico en la variable. | `i++;`<br> Resultado final idéntico en la variable. |
 | **Bucles `for` simples** | `for (int i = 0; i < 5; ++i)`<br> Mismo número de iteraciones y comportamiento. | `for (int i = 0; i < 5; i++)`<br> Mismo número de iteraciones y comportamiento. |
 | **Rendimiento (C++)** |  **Más eficiente** en iteradores de objetos (evita guardar copias). |  Puede generar una copia temporal del objeto en iteradores. |
+
+# Analisis de codigo propuesto 
+el codigo: 
+<img width="477" height="483" alt="image" src="https://github.com/user-attachments/assets/3df2c985-b126-4aec-9ed5-4f19def7fc33" />
+
+# Análisis de Código: Preincremento vs Postincremento en Java
+
+A continuación se presenta el desglose y análisis del comportamiento de la ejecución del código:
+
+## 📊 Cuadro Comparativo de Variables
+
+| Variable | Valor Final | Operación Evaluada | Explicación del Comportamiento |
+| :--- | :--- | :--- | :--- |
+| **`a`** | `6` | `++a` (Preincremento) | Se incrementa de 5 a 6 **antes** de evaluarse en la asignación. |
+| **`b`** | `6` | `int b = ++a` | Recibe el valor de `a` ya incrementado. |
+| **`c`** | `6` | `c++` (Postincremento) | Devuelve su valor actual (5) para la asignación y **luego** se incrementa a 6. |
+| **`d`** | `5` | `int d = c++` | Recibe el valor original de `c` (5) **antes** de que este cambie. |
+
+# Comparación: Preincremento (`++i`) vs Postincremento (`i++`)
+
+| Contexto / Operación | Preincremento (`++i`) | Postincremento (`i++`) | ¿Producen resultado distinto? |
+| :--- | :--- | :--- | :---: |
+| **1. En un ciclo `for`** | `for (int i = 0; i < 5; ++i)`<br>🔹 Se incrementa en cada paso. | `for (int i = 0; i < 5; i++)`<br>🔹 Se incrementa en cada paso. | ❌ **No** *(Comportamiento idéntico)* |
+| **2. En una Asignación** | `int b = ++a;` *(si `a=5`)*<br>🔹 `a` pasa a 6 y **`b` recibe 6**. | `int b = a++;` *(si `a=5`)*<br>🔹 **`b` recibe 5** y luego `a` pasa a 6. | Sí |
+| **3. En Operaciones Matemáticas** | `int res = 10 + ++x;` *(si `x=2`)*<br>🔹 `x` pasa a 3 primero. `10 + 3 = 13`. | `int res = 10 + x++;` *(si `x=2`)*<br>🔹 Usa `x=2`. `10 + 2 = 12`. Luego `x` pasa a 3. | Sí |
+---
+
+## 🖥️ Salida en Consola
 ### Estructuras condicionales
 
 Las estructuras condicionales permiten que un programa tome diferentes decisiones dependiendo de si una condición se cumple o no.
