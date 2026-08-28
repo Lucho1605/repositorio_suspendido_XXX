@@ -210,15 +210,17 @@ El código desarrollado para el ejercicio es el siguiente:
 
             System.out.println("El valor a pagar sin descuento: " + subt);
 
-            if (subt < 20000) {
+            if (subt < 100000) {
                 des = subt * 0;
             }
-            else if (subt > 20000 && subt < 70000) {
-                des = subt * 0.05;
+            else if (subt > 100000 && subt < 300000) {
+                des = subt * 0.1;
             }
-            else if (subt > 70000) {
-                des = subt * 0.3;
+            else if (subt > 300000 && subt < 500000) {
+                des = subt * 0.15;
             }
+            if (subt > 500000) {
+                des = subt * 0.2;
 
             tot = subt - des;
 
@@ -457,7 +459,7 @@ Si `subt` vale `12500000`, se mostrará:
 
 # 12. Primera condición
 
-    if (subt < 20000) {
+    if (subt < 100000) {
         des = subt * 0;
     }
 
@@ -465,11 +467,11 @@ Si `subt` vale `12500000`, se mostrará:
 
 La condición:
 
-    subt < 20000
+    subt < 100000
 
 significa:
 
-> Si el subtotal es menor que $20.000.
+> Si el subtotal es menor que $100.000.
 
 ### Operador `<`
 
@@ -479,9 +481,9 @@ El símbolo `<` significa:
 
 Por lo tanto:
 
-    subt < 20000
+    subt < 100000
 
-comprueba si el subtotal es menor a 20.000.
+comprueba si el subtotal es menor a 100.000.
 
 Si la condición se cumple:
 
@@ -497,79 +499,92 @@ En este caso se multiplica el subtotal por `0`, por lo que no se aplica ningún 
 
 # 13. Segunda condición
 
-    else if (subt > 20000 && subt < 70000) {
-        des = subt * 0.05;
+    else if (subt > 100000 && subt < 300000) {
+        des = subt * 0.1;
     }
 
 `else if` permite comprobar otra condición cuando la condición anterior no se cumplió.
 
 En este caso se utilizan dos condiciones:
 
-    subt > 20000
+    subt > 100000
 
 y
 
-    subt < 70000
+    subt < 300000
 
 El operador `&&` significa **Y**.
 
 Por lo tanto:
 
-    subt > 20000 && subt < 70000
+    subt > 100000 && subt < 300000
 
 significa:
 
-> El subtotal debe ser mayor que $20.000 Y menor que $70.000.
+> El subtotal debe ser mayor que $100.000 Y menor que $300.000.
 
-Si se cumple la condición, se aplica un descuento del 5%.
+Si se cumple la condición, se aplica un descuento del 10%.
 
-    des = subt * 0.05;
+    des = subt * 0.1;
 
-### `0.05`
+### `0.1`
 
-El valor `0.05` representa el 5%.
+El valor `0.1` representa el 10%.
 
 Por ejemplo:
 
-    50000 × 0.05 = 2500
+    50000 × 0.1 = 5000
 
-Por lo tanto, para una compra de $50.000 el descuento sería de $2.500.
+Por lo tanto, para una compra de $50.000 el descuento sería de $5.000.
 
 ---
 
 # 14. Tercera condición
 
-    else if (subt > 70000) {
-        des = subt * 0.3;
+    else if (subt > 300000 && subt < 500000) {
+        des = subt * 0.15;
     }
 
-Esta condición comprueba si el subtotal es mayor a $70.000.
+Esta condición comprueba si el subtotal es mayor a $300.000, y menor que $500.000.
 
 El operador:
 
     >
 
 significa **mayor que**.
+El operador:
+
+    <
+
+significa **menor que**.
 
 Por lo tanto:
 
-    subt > 70000
+    subt > 300000
 
 significa:
 
-> El subtotal debe ser mayor que $70.000.
+> El subtotal debe ser mayor que $300.000.
 
-Si se cumple, se aplica un descuento del 30%.
+Por lo tanto:
 
-    des = subt * 0.3;
+    subt <  500000
 
-El valor `0.3` representa el 30%.
+significa:
+
+> El subtotal debe ser menor que $500.000.
+
+Si se cumple, se aplica un descuento del 15%.
+
+    des = subt * 0.15;
+
+El valor `0.15` representa el 15%.
 
 Por ejemplo:
 
-    100000 × 0.3 = 30000
+    100000 × 0.15 = 15000
 
-En una compra de $100.000, el descuento sería de $30.000.
+En una compra de $100.000, el descuento sería de $15.000.
 
 ---
 
@@ -624,9 +639,9 @@ Durante el desarrollo del programa se utilizan diferentes operadores.
 |---|---|---|
 | `*` | Multiplicación | `cant * prec` |
 | `-` | Resta | `subt - des` |
-| `<` | Menor que | `subt < 20000` |
-| `>` | Mayor que | `subt > 70000` |
-| `&&` | Y lógico | `subt > 20000 && subt < 70000` |
+| `<` | Menor que | `subt < 100000` |
+| `>` | Mayor que | `subt > 500000` |
+| `&&` | Y lógico | `subt > 100000 && subt < 300000` |
 | `=` | Asignación | `cant = sc.nextInt()` |
 | `+` | Concatenación | `"Total: " + tot` |
 
@@ -670,22 +685,22 @@ El programa realiza:
 
     Subtotal = $12.500.000
 
-Como el subtotal es mayor que $70.000, se aplica un descuento del 30%:
+Como el subtotal es mayor que $500.000, se aplica un descuento del 20%:
 
-    Descuento = 12.500.000 × 0.30
+    Descuento = 12.500.000 × 0.2
 
-    Descuento = $3.750.000
+    Descuento = $2.500.000
 
 Finalmente:
 
-    Total = 12.500.000 - 3.750.000
+    Total = 12.500.000 - 2.500.000
 
-    Total = $8.750.000
+    Total = $10.000.000
 
 El programa mostraría:
 
     El valor a pagar sin descuento: 12500000
-    El total de su compra es de: 8750000.0
+    El total de su compra es de: 10000000.0
 
 ---
 
