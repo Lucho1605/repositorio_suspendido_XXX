@@ -724,7 +724,7 @@ Con el desarrollo de este ejercicio se reforzaron los conocimientos relacionados
 
 # 21. Evidencia de la ejecución del programa
 
-<img width="1365" height="719" alt="image" src="https://github.com/user-attachments/assets/6d61aae7-2af2-4281-bed3-1ec60638fa64" />
+<img width="1354" height="717" alt="image" src="https://github.com/user-attachments/assets/f1e2f996-4005-473a-b02a-269e47c68629" />
 
 
 ---
