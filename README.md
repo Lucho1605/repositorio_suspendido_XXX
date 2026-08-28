@@ -1269,6 +1269,1321 @@ Con el desarrollo de este ejercicio se reforzaron los siguientes conceptos:
 
 ---
 
+# Ejercicio 3 
+
+## Introducción
+
+En este ejercicio se desarrolla un programa en Java para una plataforma de transporte compartido.
+
+El programa permite evaluar a un conductor teniendo en cuenta tres condiciones:
+
+- La calificación del conductor.
+- La cantidad de viajes realizados.
+- La disponibilidad del conductor.
+
+Dependiendo de las condiciones que cumpla, el programa determina si el conductor puede ser asignado como **Premium**, **Estándar** o si **no puede ser asignado**.
+
+---
+
+## Objetivo
+
+Aplicar el uso de condiciones compuestas y estructuras condicionales en Java para resolver una situación de la vida real.
+
+El programa debe analizar las tres condiciones establecidas y determinar el tipo de asignación correspondiente.
+
+---
+
+## Condiciones del ejercicio
+
+Para que un conductor sea considerado **Conductor Premium**, debe cumplir las tres condiciones:
+
+- Tener una calificación mayor o igual a `4.8`.
+- Haber realizado más de `500` viajes.
+- Encontrarse disponible.
+
+Si el conductor cumple **dos de las tres condiciones**, será asignado como **Conductor Estándar**.
+
+Si cumple una o ninguna de las condiciones, **no podrá ser asignado**.
+
+---
+
+## Proceso del programa
+
+### 1. Inicio del programa
+
+El programa comienza importando la clase `Scanner`, que permite recibir información ingresada por el usuario.
+
+Después se crea un objeto llamado `teclado`, que será utilizado para leer los datos.
+
+### 2. Declaración de variables
+
+Se crean las variables necesarias para almacenar la información:
+
+- `calificacion`: almacena la calificación del conductor.
+- `viajes`: almacena la cantidad de viajes realizados.
+- `disponible`: almacena si el conductor está disponible.
+- `condiciones`: funciona como contador de las condiciones cumplidas.
+
+El contador `condiciones` comienza en `0`.
+
+### 3. Solicitud de información
+
+El programa solicita al usuario tres datos:
+
+1. La calificación del conductor.
+2. La cantidad de viajes realizados.
+3. Si el conductor está disponible.
+
+Por ejemplo:
+
+**Calificación:** `4.9`
+
+**Viajes realizados:** `600`
+
+**Disponibilidad:** `si`
+
+### 4. Evaluación de la primera condición
+
+El programa verifica si la calificación del conductor es mayor o igual a `4.8`.
+
+Si esta condición se cumple, el contador aumenta en uno.
+
+### 5. Evaluación de la segunda condición
+
+Después se verifica si el conductor ha realizado más de `500` viajes.
+
+Si cumple esta condición, el contador aumenta nuevamente en uno.
+
+### 6. Evaluación de la tercera condición
+
+Finalmente se verifica si el conductor está disponible.
+
+Si la respuesta es `si`, el contador aumenta en uno.
+
+Para realizar la comparación se utiliza `equalsIgnoreCase()`, permitiendo aceptar respuestas como `si`, `SI`, `Si` o `sI`.
+
+---
+
+## Contador de condiciones
+
+El contador es importante porque permite determinar cuántas condiciones cumple el conductor.
+
+La lógica utilizada es:
+
+| Condiciones cumplidas | Resultado |
+|---:|---|
+| 3 | Conductor Premium |
+| 2 | Conductor Estándar |
+| 1 | No puede ser asignado |
+| 0 | No puede ser asignado |
+
+De esta manera, el programa no necesita realizar una gran cantidad de condiciones diferentes, sino que cuenta las condiciones que se cumplen y posteriormente analiza el resultado.
+
+---
+
+## 7. Estructura condicional utilizada
+
+Para determinar la asignación final se utiliza una estructura:
+
+`if - else if - else`
+
+El funcionamiento es el siguiente:
+
+- Si `condiciones` es igual a `3`, se muestra **Conductor Premium**.
+- Si `condiciones` es igual a `2`, se muestra **Conductor Estándar**.
+- En cualquier otro caso, se muestra **No puede ser asignado**.
+
+Esta estructura permite controlar los diferentes resultados posibles del programa.
+
+---
+
+## Ejemplo 1 - Conductor Premium
+
+Datos ingresados:
+
+| Dato | Valor |
+|---|---:|
+| Calificación | 4.9 |
+| Viajes | 600 |
+| Disponible | Si |
+
+Evaluación:
+
+- Calificación mayor o igual a `4.8`: **Cumple**.
+- Más de `500` viajes: **Cumple**.
+- Disponible: **Cumple**.
+
+Total de condiciones cumplidas: **3**
+
+Resultado:
+
+**Conductor Premium**
+
+---
+
+## Ejemplo 2 - Conductor Estándar
+
+Datos ingresados:
+
+| Dato | Valor |
+|---|---:|
+| Calificación | 4.9 |
+| Viajes | 600 |
+| Disponible | No |
+
+Evaluación:
+
+- Calificación mayor o igual a `4.8`: **Cumple**.
+- Más de `500` viajes: **Cumple**.
+- Disponible: **No cumple**.
+
+Total de condiciones cumplidas: **2**
+
+Resultado:
+
+**Conductor Estándar**
+
+---
+
+## Ejemplo 3 - No puede ser asignado
+
+Datos ingresados:
+
+| Dato | Valor |
+|---|---:|
+| Calificación | 4.5 |
+| Viajes | 300 |
+| Disponible | No |
+
+Evaluación:
+
+- Calificación mayor o igual a `4.8`: **No cumple**.
+- Más de `500` viajes: **No cumple**.
+- Disponible: **No cumple**.
+
+Total de condiciones cumplidas: **0**
+
+Resultado:
+
+**No puede ser asignado**
+
+---
+
+## Flujo del programa
+
+El proceso que sigue el programa puede resumirse de la siguiente manera:
+
+**Inicio**
+
+↓
+
+**Ingresar calificación**
+
+↓
+
+**Ingresar cantidad de viajes**
+
+↓
+
+**Ingresar disponibilidad**
+
+↓
+
+**Evaluar calificación**
+
+↓
+
+**Evaluar cantidad de viajes**
+
+↓
+
+**Evaluar disponibilidad**
+
+↓
+
+**Contar condiciones cumplidas**
+
+↓
+
+**¿Cumple 3 condiciones?**
+
+→ Sí: **Conductor Premium**
+
+→ No: continuar
+
+↓
+
+**¿Cumple 2 condiciones?**
+
+→ Sí: **Conductor Estándar**
+
+→ No: **No puede ser asignado**
+
+↓
+
+**Fin**
+
+---
+
+## Conceptos de Java utilizados
+
+### Scanner
+
+Se utiliza `Scanner` para recibir los datos ingresados por el usuario.
+
+### Variables
+
+Se utilizan variables de diferentes tipos:
+
+- `double` para la calificación.
+- `int` para la cantidad de viajes.
+- `String` para la disponibilidad.
+- `int` para contar las condiciones cumplidas.
+
+### if
+
+Permite comprobar si una condición se cumple.
+
+### else if
+
+Permite comprobar una segunda condición cuando la anterior no se cumple.
+
+### else
+
+Permite establecer el resultado cuando ninguna de las condiciones anteriores se cumple.
+
+### Operadores de comparación
+
+Se utilizan operadores como:
+
+- `>=` para comprobar si la calificación es mayor o igual a `4.8`.
+- `>` para comprobar si los viajes son mayores a `500`.
+- `==` para comprobar la cantidad de condiciones cumplidas.
+
+### Operador de incremento
+
+Se utiliza `++` para aumentar el contador cuando una condición se cumple.
+
+Por ejemplo, cada vez que una condición es verdadera, `condiciones` aumenta en uno.
+
+---
+
+## Resultado esperado
+
+El programa permite clasificar correctamente a los conductores según las condiciones establecidas.
+
+La clasificación final es:
+
+- **3 condiciones cumplidas:** Conductor Premium.
+- **2 condiciones cumplidas:** Conductor Estándar.
+- **1 o 0 condiciones cumplidas:** No puede ser asignado.
+
+---
+
+## Evidencia de la ejecución del programa 
+
+<img width="1365" height="717" alt="image" src="https://github.com/user-attachments/assets/7ddf12a6-6393-49f1-a967-5b453b6f9773" />
+
+---
+
+# Ejercicio 4 
+
+## Introducción
+
+En este ejercicio se desarrolla un programa en Java que permite evaluar una solicitud de crédito.
+
+El programa solicita al usuario tres datos:
+
+- Sus ingresos mensuales.
+- Su puntaje crediticio.
+- Su antigüedad laboral en años.
+
+Después de recibir estos datos, el programa evalúa cada uno de los criterios y determina si el crédito es aprobado, condicionado o rechazado.
+
+---
+
+## Objetivo
+
+Aplicar estructuras condicionales en Java para evaluar diferentes criterios y tomar una decisión dependiendo de la cantidad de condiciones que cumple el usuario.
+
+---
+
+## Variables utilizadas
+
+El programa utiliza cuatro variables principales:
+
+| Variable | Tipo | Función |
+|---|---|---|
+| `ingr` | `double` | Almacena los ingresos mensuales |
+| `punt` | `int` | Almacena el puntaje crediticio |
+| `antig` | `double` | Almacena la antigüedad laboral en años |
+| `crit` | `int` | Cuenta la cantidad de criterios cumplidos |
+
+La variable `crit` comienza con el valor `0`:
+
+~~~java
+int crit = 0;
+~~~
+
+Esta variable funciona como un contador. Cada vez que se cumple uno de los criterios, su valor aumenta en uno mediante el operador `++`.
+
+---
+
+## Proceso del programa
+
+### 1. Crear el Scanner
+
+El programa utiliza `Scanner` para recibir los datos que ingresa el usuario.
+
+~~~java
+Scanner sc = new Scanner(System.in);
+~~~
+
+El objeto utilizado para ingresar los datos se llama `sc`.
+
+---
+
+### 2. Declaración de variables
+
+Se declaran las variables que serán utilizadas durante el programa:
+
+~~~java
+double ingr;
+int punt;
+double antig;
+int crit = 0;
+~~~
+
+- `ingr` almacena los ingresos mensuales.
+- `punt` almacena el puntaje crediticio.
+- `antig` almacena la antigüedad laboral en años.
+- `crit` cuenta la cantidad de criterios cumplidos.
+
+---
+
+### 3. Ingresar los ingresos mensuales
+
+El programa solicita al usuario sus ingresos mensuales:
+
+~~~java
+System.out.print("Ingrese sus ingresos mensuales: ");
+ingr = sc.nextDouble();
+~~~
+
+El valor ingresado se guarda en la variable `ingr`.
+
+El criterio se cumple cuando los ingresos son mayores a `5000000`.
+
+~~~java
+if (ingr > 5000000) {
+    crit++;
+}
+~~~
+
+Si la condición se cumple, el contador `crit` aumenta en uno.
+
+---
+
+### 4. Ingresar el puntaje crediticio
+
+Después se solicita el puntaje crediticio:
+
+~~~java
+System.out.print("Ingrese su puntaje crediticio: ");
+punt = sc.nextInt();
+~~~
+
+El valor ingresado se almacena en la variable `punt`.
+
+El criterio se cumple cuando el puntaje es mayor a `750`.
+
+~~~java
+if (punt > 750) {
+    crit++;
+}
+~~~
+
+Si la condición se cumple, el contador `crit` aumenta en uno.
+
+---
+
+### 5. Ingresar la antigüedad laboral
+
+Finalmente, el programa solicita la antigüedad laboral en años:
+
+~~~java
+System.out.print("Ingrese su antigüedad laboral en años: ");
+antig = sc.nextDouble();
+~~~
+
+El valor ingresado se almacena en la variable `antig`.
+
+El criterio se cumple cuando la antigüedad laboral es mayor a `2` años.
+
+~~~java
+if (antig > 2) {
+    crit++;
+}
+~~~
+
+Si la condición se cumple, el contador `crit` aumenta en uno.
+
+---
+
+## Evaluación de los criterios
+
+El programa evalúa tres criterios:
+
+| Criterio | Condición |
+|---|---|
+| Ingresos mensuales | `ingr > 5000000` |
+| Puntaje crediticio | `punt > 750` |
+| Antigüedad laboral | `antig > 2` |
+
+Cada vez que una condición se cumple se ejecuta:
+
+~~~java
+crit++;
+~~~
+
+Esto permite llevar un conteo de los criterios que cumple el usuario.
+
+Por ejemplo, si se cumplen los tres criterios:
+
+~~~text
+crit = 0
+crit = 1
+crit = 2
+crit = 3
+~~~
+
+Al final, `crit` tendrá el valor `3`.
+
+---
+
+## Determinación del resultado
+
+Después de evaluar los tres criterios, el programa utiliza una estructura `if - else if - else` para determinar el resultado final.
+
+~~~java
+if (crit == 3) {
+    System.out.println("Crédito Aprobado.");
+} else if (crit >= 2) {
+    System.out.println("Crédito Condicionado.");
+} else {
+    System.out.println("Crédito Rechazado.");
+}
+~~~
+
+### Crédito Aprobado
+
+Si `crit` es igual a `3`, significa que se cumplieron los tres criterios.
+
+El programa muestra:
+
+~~~text
+Crédito Aprobado.
+~~~
+
+### Crédito Condicionado
+
+Si `crit` es mayor o igual a `2`, significa que se cumplieron al menos dos criterios.
+
+El programa muestra:
+
+~~~text
+Crédito Condicionado.
+~~~
+
+### Crédito Rechazado
+
+Si `crit` es menor que `2`, significa que se cumplió uno o ningún criterio.
+
+El programa muestra:
+
+~~~text
+Crédito Rechazado.
+~~~
+
+---
+
+## Tabla de resultados
+
+| Valor de `crit` | Resultado |
+|---:|---|
+| `3` | Crédito Aprobado |
+| `2` | Crédito Condicionado |
+| `1` | Crédito Rechazado |
+| `0` | Crédito Rechazado |
+
+---
+
+## Ejemplo de ejecución
+
+### Ejemplo 1 - Crédito Aprobado
+
+Datos ingresados:
+
+~~~text
+Ingrese sus ingresos mensuales: 6000000
+Ingrese su puntaje crediticio: 800
+Ingrese su antigüedad laboral en años: 3
+~~~
+
+Evaluación:
+
+- `ingr > 5000000` → Cumple.
+- `punt > 750` → Cumple.
+- `antig > 2` → Cumple.
+
+Por lo tanto:
+
+~~~text
+crit = 3
+~~~
+
+Resultado:
+
+~~~text
+Crédito Aprobado.
+~~~
+
+---
+
+### Ejemplo 2 - Crédito Condicionado
+
+Datos ingresados:
+
+~~~text
+Ingrese sus ingresos mensuales: 6000000
+Ingrese su puntaje crediticio: 800
+Ingrese su antigüedad laboral en años: 1
+~~~
+
+Evaluación:
+
+- `ingr > 5000000` → Cumple.
+- `punt > 750` → Cumple.
+- `antig > 2` → No cumple.
+
+Por lo tanto:
+
+~~~text
+crit = 2
+~~~
+
+Resultado:
+
+~~~text
+Crédito Condicionado.
+~~~
+
+---
+
+### Ejemplo 3 - Crédito Rechazado
+
+Datos ingresados:
+
+~~~text
+Ingrese sus ingresos mensuales: 3000000
+Ingrese su puntaje crediticio: 700
+Ingrese su antigüedad laboral en años: 1
+~~~
+
+Evaluación:
+
+- `ingr > 5000000` → No cumple.
+- `punt > 750` → No cumple.
+- `antig > 2` → No cumple.
+
+Por lo tanto:
+
+~~~text
+crit = 0
+~~~
+
+Resultado:
+
+~~~text
+Crédito Rechazado.
+~~~
+
+---
+
+## Código completo
+
+~~~java
+public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    double ingr;
+    int punt;
+    double antig;
+    int crit = 0;
+
+    System.out.print("Ingrese sus ingresos mensuales: ");
+    ingr = sc.nextDouble();
+
+    System.out.print("Ingrese su puntaje crediticio: ");
+    punt = sc.nextInt();
+
+    System.out.print("Ingrese su antigüedad laboral en años: ");
+    antig = sc.nextDouble();
+
+    if (ingr > 5000000) {
+        crit++;
+    }
+
+    if (punt > 750) {
+        crit++;
+    }
+
+    if (antig > 2) {
+        crit++;
+    }
+
+
+    if (crit == 3) {
+        System.out.println("Crédito Aprobado.");
+    } else if (crit >= 2) {
+        System.out.println("Crédito Condicionado.");
+    } else {
+        System.out.println("Crédito Rechazado.");
+    }
+
+}
+~~~
+
+---
+
+## Conceptos de Java utilizados
+
+### Scanner
+
+Se utiliza `Scanner` para recibir la información ingresada por el usuario.
+
+~~~java
+Scanner sc = new Scanner(System.in);
+~~~
+
+### Variables
+
+El programa utiliza variables de diferentes tipos:
+
+~~~java
+double ingr;
+int punt;
+double antig;
+int crit = 0;
+~~~
+
+### Estructura `if`
+
+Se utiliza `if` para comprobar cada uno de los criterios.
+
+~~~java
+if (ingr > 5000000) {
+    crit++;
+}
+~~~
+
+### Estructura `else if`
+
+Se utiliza `else if` para comprobar si se cumplen al menos dos criterios.
+
+~~~java
+else if (crit >= 2) {
+    System.out.println("Crédito Condicionado.");
+}
+~~~
+
+### Estructura `else`
+
+Se utiliza `else` cuando no se cumplen las condiciones anteriores.
+
+~~~java
+else {
+    System.out.println("Crédito Rechazado.");
+}
+~~~
+
+### Operadores de comparación
+
+En el programa se utilizan los siguientes operadores:
+
+- `>` para comprobar si un valor es mayor que otro.
+- `==` para comprobar si un valor es igual a otro.
+- `>=` para comprobar si un valor es mayor o igual a otro.
+
+### Operador de incremento
+
+Se utiliza `++` para aumentar el contador `crit`.
+
+~~~java
+crit++;
+~~~
+
+Cada vez que se cumple un criterio, el valor de `crit` aumenta en uno.
+
+---
+
+## Flujo del programa
+
+~~~text
+Inicio
+   |
+   v
+Ingresar ingresos mensuales
+   |
+   v
+Ingresar puntaje crediticio
+   |
+   v
+Ingresar antigüedad laboral
+   |
+   v
+Evaluar ingresos > 5000000
+   |
+   +---- Se cumple ----> crit++
+   |
+   v
+Evaluar puntaje > 750
+   |
+   +---- Se cumple ----> crit++
+   |
+   v
+Evaluar antigüedad > 2
+   |
+   +---- Se cumple ----> crit++
+   |
+   v
+Evaluar valor de crit
+   |
+   +---- crit == 3 ----> Crédito Aprobado
+   |
+   +---- crit >= 2 ----> Crédito Condicionado
+   |
+   +---- En otro caso -> Crédito Rechazado
+   |
+   v
+Fin
+~~~
+
+---
+
+## Evidencia de la ejecución del programa 
+
+<img width="1361" height="717" alt="image" src="https://github.com/user-attachments/assets/faebed81-8965-4521-9ad8-689cc3087e90" />
+
+---
+
+# Ejercicio 5
+## Introducción
+
+En este ejercicio se desarrolla un programa en Java para clasificar a los pasajeros de una aerolínea de acuerdo con la cantidad de vuelos realizados durante el año y si cuentan con una membresía activa.
+
+El programa permite obtener una de las siguientes categorías:
+
+- **Categoría Oro**
+- **Categoría Plata**
+- **Categoría Básica**
+
+Además, el programa determina si el pasajero tiene **acceso VIP**.
+
+---
+
+## Objetivo
+
+Aplicar el uso de estructuras condicionales `if` anidados y condiciones múltiples en Java para clasificar a un pasajero según los datos ingresados.
+
+El programa debe mostrar:
+
+- La categoría obtenida.
+- Si el pasajero tiene acceso VIP.
+
+---
+
+## Condiciones del ejercicio
+
+### Categoría Oro
+
+El pasajero obtiene la categoría **Oro** cuando:
+
+- Tiene más de `50` vuelos en el año.
+- Tiene una membresía activa.
+
+### Categoría Plata
+
+El pasajero obtiene la categoría **Plata** cuando:
+
+- Tiene entre `20` y `50` vuelos.
+- Tiene una membresía activa.
+
+### Categoría Básica
+
+El pasajero obtiene la categoría **Básica** cuando:
+
+- Tiene menos de `20` vuelos.
+- O no posee una membresía activa.
+
+### Acceso VIP
+
+El pasajero recibe **acceso VIP** cuando:
+
+- Pertenece a la categoría **Oro**.
+- Tiene más de `70` vuelos.
+
+---
+
+## Proceso del programa
+
+### 1. Crear el Scanner
+
+El programa utiliza la clase `Scanner` para recibir los datos ingresados por el usuario.
+
+~~~java
+Scanner sc = new Scanner(System.in);
+~~~
+
+El objeto utilizado para leer los datos se llama `sc`.
+
+---
+
+### 2. Declaración de variables
+
+Se utilizan las siguientes variables:
+
+~~~java
+int vuelos;
+String membresia;
+String categoria;
+boolean vip = false;
+~~~
+
+### `vuelos`
+
+La variable `vuelos` almacena la cantidad de vuelos realizados por el pasajero durante el año.
+
+Es de tipo `int` porque representa una cantidad de vuelos.
+
+### `membresia`
+
+La variable `membresia` almacena la respuesta del usuario sobre si tiene una membresía activa.
+
+Es de tipo `String` porque almacena texto.
+
+### `categoria`
+
+La variable `categoria` almacena la categoría obtenida por el pasajero.
+
+Puede recibir los valores:
+
+- `Oro`
+- `Plata`
+- `Básica`
+
+### `vip`
+
+La variable `vip` es de tipo `boolean` y permite determinar si el pasajero tiene acceso VIP.
+
+Inicialmente se establece en:
+
+~~~java
+boolean vip = false;
+~~~
+
+Esto significa que al comenzar el programa el pasajero no tiene acceso VIP.
+
+---
+
+## 3. Solicitar la cantidad de vuelos
+
+El programa solicita al usuario la cantidad de vuelos realizados durante el año:
+
+~~~java
+System.out.print("Ingrese la cantidad de vuelos realizados en el año: ");
+vuelos = sc.nextInt();
+~~~
+
+El valor ingresado queda almacenado en la variable `vuelos`.
+
+---
+
+## 4. Solicitar la membresía
+
+Después de ingresar la cantidad de vuelos, el programa solicita si el pasajero tiene una membresía activa:
+
+~~~java
+sc.nextLine();
+
+System.out.print("¿Tiene membresía activa? (si/no): ");
+membresia = sc.nextLine();
+~~~
+
+Se utiliza `nextLine()` después de `nextInt()` para poder leer correctamente la respuesta de texto.
+
+---
+
+## 5. Evaluar la categoría Oro
+
+El programa primero verifica si el pasajero tiene más de `50` vuelos:
+
+~~~java
+if (vuelos > 50) {
+~~~
+
+Si tiene más de `50` vuelos, se realiza otra comprobación para verificar si tiene una membresía activa:
+
+~~~java
+if (membresia.equalsIgnoreCase("si")) {
+    categoria = "Oro";
+}
+~~~
+
+Para obtener la categoría Oro se deben cumplir las dos condiciones:
+
+- Tener más de `50` vuelos.
+- Tener una membresía activa.
+
+---
+
+## 6. Evaluar el acceso VIP
+
+Una vez que el pasajero obtiene la categoría Oro, el programa verifica si tiene más de `70` vuelos:
+
+~~~java
+if (vuelos > 70) {
+    vip = true;
+}
+~~~
+
+Si se cumple esta condición, la variable `vip` cambia de `false` a `true`.
+
+Por lo tanto, el pasajero tendrá acceso VIP.
+
+---
+
+## 7. Categoría Básica por falta de membresía
+
+Si el pasajero tiene más de `50` vuelos pero no posee una membresía activa, el programa asigna la categoría Básica:
+
+~~~java
+else {
+    categoria = "Básica";
+}
+~~~
+
+Esto significa que tener más de `50` vuelos no es suficiente para obtener la categoría Oro, ya que también se necesita una membresía activa.
+
+---
+
+## 8. Evaluar la categoría Plata
+
+Si el pasajero no tiene más de `50` vuelos, el programa evalúa si tiene entre `20` y `50` vuelos:
+
+~~~java
+else if (vuelos >= 20 && vuelos <= 50) {
+~~~
+
+Aquí se utiliza el operador lógico `&&`.
+
+Las dos condiciones deben cumplirse:
+
+- `vuelos >= 20`
+- `vuelos <= 50`
+
+Después se verifica si tiene una membresía activa:
+
+~~~java
+if (membresia.equalsIgnoreCase("si")) {
+    categoria = "Plata";
+}
+~~~
+
+Para obtener Plata se deben cumplir:
+
+- Tener entre `20` y `50` vuelos.
+- Tener una membresía activa.
+
+---
+
+## 9. Categoría Básica
+
+Si el pasajero tiene entre `20` y `50` vuelos pero no posee membresía activa, obtiene la categoría Básica.
+
+También obtiene la categoría Básica cuando tiene menos de `20` vuelos.
+
+---
+
+## Tabla de clasificación
+
+| Cantidad de vuelos | Membresía activa | Categoría |
+|---:|---|---|
+| Más de 50 | Sí | Oro |
+| Más de 50 | No | Básica |
+| Entre 20 y 50 | Sí | Plata |
+| Entre 20 y 50 | No | Básica |
+| Menos de 20 | Sí | Básica |
+| Menos de 20 | No | Básica |
+
+---
+
+## Tabla de acceso VIP
+
+| Categoría | Cantidad de vuelos | Acceso VIP |
+|---|---:|---|
+| Oro | Más de 70 | Sí |
+| Oro | Entre 51 y 70 | No |
+| Plata | Entre 20 y 50 | No |
+| Básica | Menos de 20 | No |
+| Básica | Más de 50 sin membresía | No |
+
+El acceso VIP solamente se activa cuando el pasajero pertenece a la categoría Oro y tiene más de `70` vuelos.
+
+---
+
+## Ejemplos de ejecución
+
+### Ejemplo 1 - Categoría Oro con acceso VIP
+
+Datos ingresados:
+
+~~~text
+Ingrese la cantidad de vuelos realizados en el año: 80
+¿Tiene membresía activa? (si/no): si
+~~~
+
+Evaluación:
+
+- Tiene más de `50` vuelos: cumple.
+- Tiene membresía activa: cumple.
+- Tiene más de `70` vuelos: cumple.
+
+Resultado:
+
+~~~text
+Categoría obtenida: Oro
+Acceso VIP: Sí
+~~~
+
+---
+
+### Ejemplo 2 - Categoría Oro sin acceso VIP
+
+Datos ingresados:
+
+~~~text
+Ingrese la cantidad de vuelos realizados en el año: 60
+¿Tiene membresía activa? (si/no): si
+~~~
+
+Evaluación:
+
+- Tiene más de `50` vuelos: cumple.
+- Tiene membresía activa: cumple.
+- Tiene más de `70` vuelos: no cumple.
+
+Resultado:
+
+~~~text
+Categoría obtenida: Oro
+Acceso VIP: No
+~~~
+
+---
+
+### Ejemplo 3 - Categoría Plata
+
+Datos ingresados:
+
+~~~text
+Ingrese la cantidad de vuelos realizados en el año: 30
+¿Tiene membresía activa? (si/no): si
+~~~
+
+Evaluación:
+
+- Tiene entre `20` y `50` vuelos: cumple.
+- Tiene membresía activa: cumple.
+- No pertenece a Oro, por lo tanto no tiene acceso VIP.
+
+Resultado:
+
+~~~text
+Categoría obtenida: Plata
+Acceso VIP: No
+~~~
+
+---
+
+### Ejemplo 4 - Categoría Básica
+
+Datos ingresados:
+
+~~~text
+Ingrese la cantidad de vuelos realizados en el año: 15
+¿Tiene membresía activa? (si/no): si
+~~~
+
+Evaluación:
+
+- Tiene menos de `20` vuelos.
+- No cumple las condiciones para Oro ni Plata.
+
+Resultado:
+
+~~~text
+Categoría obtenida: Básica
+Acceso VIP: No
+~~~
+
+---
+
+## Código completo
+
+~~~java
+import java.util.Scanner;
+
+public class Ejercicio_5 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int vue;
+        String memb;
+        String cat;
+        boolean vip = false;
+
+        System.out.print("Ingrese la cantidad de vuelos realizados en el año: ");
+        vue = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("¿Tiene membresía activa? (si/no): ");
+        memb = sc.nextLine();
+
+        if (vue > 50) {
+
+            if (memb.equalsIgnoreCase("si")) {
+                cat = "Oro";
+
+                if (vue > 70) {
+                    vip = true;
+                }
+
+            } else {
+                cat = "Básica";
+            }
+
+        } else if (vue >= 20 && vue <= 50) {
+
+            if (memb.equalsIgnoreCase("si")) {
+                categoria = "Plata";
+            } else {
+                categoria = "Básica";
+            }
+
+        } else {
+            categoria = "Básica";
+        }
+
+        System.out.println("Categoría obtenida: " + cat);
+
+        if (vip) {
+            System.out.println("Acceso VIP: Sí");
+        } else {
+            System.out.println("Acceso VIP: No");
+        }
+    }
+}
+~~~
+
+---
+
+## Conceptos de Java utilizados
+
+### Scanner
+
+Se utiliza `Scanner` para recibir información desde el teclado.
+
+~~~java
+Scanner sc = new Scanner(System.in);
+~~~
+
+### Variables
+
+Se utilizan variables de diferentes tipos:
+
+~~~java
+int vue;
+String memb;
+String cat;
+boolean vip = false;
+~~~
+
+### If anidados
+
+Los `if` anidados permiten realizar una comprobación dentro de otra condición.
+
+Por ejemplo:
+
+~~~java
+if (vue > 50) {
+
+    if (memb.equalsIgnoreCase("si")) {
+        cat = "Oro";
+    }
+
+}
+~~~
+
+Primero se verifica si el pasajero tiene más de `50` vuelos y después se verifica si tiene una membresía activa.
+
+### Else if
+
+Se utiliza `else if` para evaluar el rango correspondiente a la categoría Plata:
+
+~~~java
+else if (vue >= 20 && vue <= 50) {
+~~~
+
+### Else
+
+Se utiliza `else` para asignar la categoría Básica cuando no se cumplen las condiciones anteriores.
+
+### Operador lógico `&&`
+
+El operador `&&` permite comprobar dos condiciones al mismo tiempo:
+
+~~~java
+vue >= 20 && vue <= 50
+~~~
+
+Para que esta condición sea verdadera, ambas comparaciones deben cumplirse.
+
+### Boolean
+
+La variable `vip` utiliza el tipo `boolean`:
+
+~~~java
+boolean vip = false;
+~~~
+
+Puede tener dos valores:
+
+- `true` → Tiene acceso VIP.
+- `false` → No tiene acceso VIP.
+
+---
+
+## Evidencia ejecución programa
+
+<img width="1355" height="717" alt="image" src="https://github.com/user-attachments/assets/bc41ac19-da5d-42a0-81eb-0ed002bcccd4" />
+
+
+
 ## IV. Preguntas
 
 ### ¿Cuál es la principal diferencia entre `++variable` y `variable++`?
