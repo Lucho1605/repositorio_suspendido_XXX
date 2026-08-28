@@ -2028,50 +2028,6 @@ Cada vez que se cumple un criterio, el valor de `crit` aumenta en uno.
 
 ---
 
-## Flujo del programa
-
-~~~text
-Inicio
-   |
-   v
-Ingresar ingresos mensuales
-   |
-   v
-Ingresar puntaje crediticio
-   |
-   v
-Ingresar antigüedad laboral
-   |
-   v
-Evaluar ingresos > 5000000
-   |
-   +---- Se cumple ----> crit++
-   |
-   v
-Evaluar puntaje > 750
-   |
-   +---- Se cumple ----> crit++
-   |
-   v
-Evaluar antigüedad > 2
-   |
-   +---- Se cumple ----> crit++
-   |
-   v
-Evaluar valor de crit
-   |
-   +---- crit == 3 ----> Crédito Aprobado
-   |
-   +---- crit >= 2 ----> Crédito Condicionado
-   |
-   +---- En otro caso -> Crédito Rechazado
-   |
-   v
-Fin
-~~~
-
----
-
 ## Evidencia de la ejecución del programa 
 
 <img width="1361" height="717" alt="image" src="https://github.com/user-attachments/assets/faebed81-8965-4521-9ad8-689cc3087e90" />
